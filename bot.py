@@ -23,7 +23,7 @@ async def start(bot, message):
         f"**Hi {message.chat.first_name}!**\n\n"
         "I'm Linkshortify bot. Just send me link and get short link")
 
-@bot.no_message(filters.command('set') & filters.private)
+@bot.on_message(filters.command('set') & filters.private)
 async def set(bot, message):
   if len(message.command) > 1:
     db.set(message.from_user.id, message.command[1])
