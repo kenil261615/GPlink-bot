@@ -1,5 +1,5 @@
-# GPlink-bot
-Make short link by using [GPlink](https://gplinks.in/) API key
+# Linkshortify-bot
+Make short link by using [Linkshortify](https://linkshortify.com/) API key
 ### Installation
 
 #### The Easy Way
@@ -12,4 +12,4 @@ Make short link by using [GPlink](https://gplinks.in/) API key
 
 * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
-* `API_KEY`: Create [GPlink](https://gplinks.in/) account then get this value from [GPlink API](https://gplinks.in/member/tools/api)
+* `API_KEY`: Create [Linkshortify](https://linkshortify.com/) account then get this value from [Linkshortify API](https://linkshortify.com/member/tools/api)
