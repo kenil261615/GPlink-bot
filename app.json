@@ -1,6 +1,6 @@
 {
-    "name": "GPlink_Bot",
-    "description": "Make short link by using GPlink API key",
+    "name": "Linkshortify_Bot",
+    "description": "Make short link by using Linkshortify API key",
     "keywords": [
         "telegram",
         "gplink"
