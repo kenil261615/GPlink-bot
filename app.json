@@ -20,11 +20,6 @@
             "description": "Get this value from https://my.telegram.org",
             "value": ""
         },
-        "API_KEY": {
-            "description": "Get API key from https://linkshortify.com/member/tools/api",
-            "value": ""
-        }
-    },
     "addons": [],
     "buildpacks": [
         {
