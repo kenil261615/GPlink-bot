@@ -21,7 +21,7 @@
             "value": ""
         },
         "API_KEY": {
-            "description": "Get API key from https://gplinks.in/member/tools/api",
+            "description": "Get API key from https://linkshortify.com/member/tools/api",
             "value": ""
         }
     },
