@@ -3,7 +3,7 @@
     "description": "Make short link by using Linkshortify API key",
     "keywords": [
         "telegram",
-        "gplink"
+        "linkshortify"
     ],
     "website": "https://github.com/Mahesh0253/GPlink-bot",
     "repository": "https://github.com/Mahesh0253/GPlink-bot",
