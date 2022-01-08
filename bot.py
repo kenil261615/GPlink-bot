@@ -1,11 +1,13 @@
 from os import environ
 import aiohttp
 from pyrogram import Client, filters
+import pickledb
+
+db = pickledb.load('pickle.db', True)
 
 API_ID = environ.get('API_ID')
 API_HASH = environ.get('API_HASH')
 BOT_TOKEN = environ.get('BOT_TOKEN')
-API_KEY = environ.get('API_KEY')
 
 bot = Client('linkshortify bot',
              api_id=API_ID,
@@ -21,20 +23,25 @@ async def start(bot, message):
         f"**Hi {message.chat.first_name}!**\n\n"
         "I'm Linkshortify bot. Just send me link and get short link")
 
+@bot.no_message(filters.command('set') & filters.private)
+async def set(bot, message):
+  if len(message.command) > 1:
+    db.set(message.from_user.id, message.command[1])
+    await message.reply('Set')
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
-        short_link = await get_shortlink(link)
+        short_link = await get_shortlink(link, db.get(message.from_user.id))
         await message.reply(f'Here is your [short link]({short_link})', quote=True)
     except Exception as e:
         await message.reply(f'Error: {e}', quote=True)
 
 
-async def get_shortlink(link):
+async def get_shortlink(link, api_key):
     url = 'https://linkshortify.com/api'
-    params = {'api': API_KEY, 'url': link}
+    params = {'api': api_key, 'url': link}
 
     async with aiohttp.ClientSession() as session:
         async with session.get(url, params=params, raise_for_status=True) as response:
